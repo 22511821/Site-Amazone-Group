@@ -1,0 +1,60 @@
+/* Global CSS: variables, reset, header/footer and :target page switching */
+:root{
+    --primary-color:#d4af37;
+    --dark-bg:#1a1a2e;
+    --text-color:#ffffff;
+    --text-light:#e0e0e0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--dark-bg);color:var(--text-color);min-height:100vh;margin:0;padding:0}
+
+.page{display:none;flex-direction:column;min-height:100vh;position:fixed;top:0;left:0;right:0;bottom:0;overflow-y:auto;visibility:hidden;opacity:0;z-index:-1;transition:opacity 0.3s ease, visibility 0.3s ease}
+.page:target{display:flex;visibility:visible;opacity:1;z-index:1}
+
+body:not(:has(.page:target)) #accueil{display:flex;visibility:visible;opacity:1;z-index:1}
+
+/* Header */
+.header{position:sticky;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;padding:15px 40px;background:linear-gradient(135deg,rgba(26,26,46,.95),rgba(30,30,50,.95));border-bottom:3px solid var(--primary-color)}
+.header-left{display:flex;align-items:center;gap:20px}
+.logo{height:50px;border-radius:50%;border:2px solid var(--primary-color)}
+.header h1{font-size:1.6rem;color:var(--primary-color);font-weight:700}
+
+.nav{display:flex;gap:18px;justify-self:end}
+.nav-link{padding:8px 16px;border:2px solid var(--primary-color);color:var(--primary-color);background:transparent;border-radius:6px;text-decoration:none;font-weight:600;transition:all .25s}
+.nav-link:hover{background:var(--primary-color);color:var(--dark-bg);transform:translateY(-2px)}
+
+
+.main-content{flex:1;max-width:1200px;margin:0 auto;padding:60px 20px;width:100%}
+
+img{max-width:100%;height:auto;display:block}
+
+.gallery-grid,.menu-grid,.values-grid,.offres-grid,.info-grid,.services,.galerie-grid,.presentation-wrapper{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:start}
+
+.presentation-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.presentation-row img{max-width:100%;height:auto}
+
+
+@media(max-width:768px){
+    .gallery-grid,.menu-grid,.values-grid,.offres-grid,.info-grid,.services,.galerie-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .nav{justify-content:center}
+}
+@media(max-width:480px){
+    .gallery-grid,.menu-grid,.values-grid,.offres-grid,.info-grid,.services,.galerie-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+    .nav{flex-direction:column;align-items:stretch}
+    .nav-link{width:100%;text-align:center}
+}
+
+/* Footer */
+.footer{background:linear-gradient(135deg,rgba(26,26,46,.95),rgba(30,30,50,.95));border-top:3px solid var(--primary-color);padding:15px;text-align:center;color:var(--text-light);font-size:0.9rem;margin-top:auto}
+
+/* Simple header for other pages */
+.header-simple{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 40px;background:linear-gradient(135deg,rgba(26,26,46,.95),rgba(30,30,50,.95));border-bottom:3px solid var(--primary-color)}
+.back-link{color:var(--primary-color);text-decoration:none;font-weight:600;transition:all 0.25s}
+.back-link:hover{color:#fff;transform:translateX(3px)}
+.header-simple h1{margin:0;color:var(--primary-color);font-size:1.3rem}
+
+/* Responsive small adjustments */
+@media(max-width:1024px){.header{gap:30px;padding:12px 25px}.logo{height:40px}.main-content{padding:40px 15px}}
+@media(max-width:768px){.header{grid-template-columns:auto;gap:20px;padding:12px 15px}.nav{flex-wrap:wrap;gap:10px}.main-content{padding:30px 12px}}
+@media(max-width:480px){.logo{height:32px}.nav-link{padding:6px 10px;font-size:.8rem}.main-content{padding:20px 10px}}

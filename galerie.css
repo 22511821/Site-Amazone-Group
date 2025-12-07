@@ -1,0 +1,19 @@
+/* Galerie page styles */
+
+.galerie-page {
+    background: linear-gradient(var(--dark-bg), rgba(4,9,30,0.55)),
+                url("https://i.pinimg.com/1200x/30/18/8e/30188ef24526feed3624378fa8092952.jpg") center/cover no-repeat;
+    background-attachment: scroll;
+    padding:  0;
+}
+
+.galerie-page .page-title{ text-align:center;padding-bottom:10px}
+.galerie-page .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1200px;margin:20px auto}
+.galerie-page .gallery-item{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:4/3}
+.galerie-page .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.galerie-page .gallery-item:hover img{transform:scale(1.08)}
+.galerie-page .gallery-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.6) 100%);display:flex;align-items:flex-end;justify-content:center;padding:16px;color:var(--text-color);font-weight:700;opacity:0;transition:opacity .35s}
+.galerie-page .gallery-item:hover .gallery-overlay{opacity:1}
+
+@media(max-width:768px){.galerie-page .gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.galerie-page .gallery-grid{grid-template-columns:1fr}}

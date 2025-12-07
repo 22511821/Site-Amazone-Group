@@ -1,0 +1,302 @@
+/* ===== PRESENTATION PAGE STYLES ===== */
+
+:root {
+    --primary-color: #d4af37;
+    --dark-bg: #1a1a2e;
+    --text-color: #ffffff;
+    --text-light: #e0e0e0;
+}
+
+/* Presentation section background - simple background */
+.presentation-page {
+    /* background image on the section with linear overlay (local file) */
+    background: linear-gradient(var(--dark-bg), rgba(4,9,30,0.55)),
+                url("https://i.pinimg.com/1200x/52/02/8f/52028f1c0137589ff9f85c26133d0705.jpg") center/cover no-repeat;
+    background-attachment: scroll;
+    padding:  0;
+}
+
+.presentation-page { position: relative; }
+
+/*Button Retour */
+.presentation-page .back-button {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    z-index: 110;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.45);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.18s ease;
+}
+
+.presentation-page .back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    background: rgba(0,0,0,0.6);
+}
+
+@media (max-width: 768px) {
+    .presentation-page .back-button { top: 12px; left: 12px; padding: 6px 10px; font-size: 0.95rem; }
+}
+
+
+.presentation-page .page-title {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+.presentation-page .page-title h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 0;
+}
+
+
+.presentation-page .intro-section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.presentation-page .intro-text {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+
+.presentation-page .image-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.presentation-page .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+.presentation-page .objectives-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.presentation-page .objectives-section h2,
+.presentation-page .values-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-weight: 700;
+}
+
+
+.presentation-page .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* VALUE CARDS (for objectives) */
+.presentation-page .value-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(26, 26, 46, 0.9));
+    border: 2px solid var(--primary-color);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.presentation-page .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.8);
+}
+
+.presentation-page .value-card .value-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.presentation-page .value-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin: 15px 0 10px 0;
+    font-weight: 700;
+}
+
+.presentation-page .value-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+.presentation-page .values-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+
+.presentation-page .value-item {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.06), rgba(26, 26, 46, 0.85));
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.presentation-page .value-item:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(26, 26, 46, 0.95));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+}
+
+.presentation-page .value-item .value-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.presentation-page .value-item h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin: 12px 0 8px 0;
+    font-weight: 700;
+}
+
+.presentation-page .value-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .presentation-page .page-title h1 {
+        font-size: 2.3rem;
+    }
+    
+    .presentation-page .objectives-section h2,
+    .presentation-page .values-section h2 {
+        font-size: 1.9rem;
+    }
+    
+    .presentation-page .values-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .presentation-page .page-title h1 {
+        font-size: 2rem;
+    }
+    
+    .presentation-page .intro-section {
+        margin: 20px auto;
+        padding: 15px;
+    }
+    
+    .presentation-page .image-container {
+        margin: 30px auto;
+    }
+    
+    .presentation-page .objectives-section,
+    .presentation-page .values-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    .presentation-page .objectives-section h2,
+    .presentation-page .values-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    
+    .presentation-page .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .presentation-page .value-card {
+        padding: 20px 15px;
+    }
+    
+    .presentation-page .value-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .presentation-page .value-item {
+        padding: 20px 15px;
+    }
+    
+    .presentation-page .value-item h4 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .presentation-page .page-title h1 {
+        font-size: 1.6rem;
+    }
+    
+    .presentation-page .objectives-section h2,
+    .presentation-page .values-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .presentation-page .values-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .presentation-page .intro-text {
+        font-size: 1rem;
+    }
+    
+    .presentation-page .value-card .value-icon,
+    .presentation-page .value-item .value-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .presentation-page .value-card h3,
+    .presentation-page .value-item h4 {
+        font-size: 1.1rem;
+        margin: 10px 0 8px 0;
+    }
+    
+    .presentation-page .value-card p,
+    .presentation-page .value-item p {
+        font-size: 0.85rem;
+    }
+}
+

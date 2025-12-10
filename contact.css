@@ -1,0 +1,15 @@
+/* Contact page styles */
+.contact-page {
+    background: var(--dark-bg);
+    background-attachment: scroll;
+}
+
+.contact-page .page-title{text-align:center;padding-bottom:10px}
+.contact-page .contact-container{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1200px;margin:20px auto}
+.contact-page .info-card{padding:20px;border-radius:10px;border:2px solid var(--primary-color);background:linear-gradient(135deg,rgba(212,175,55,.06),rgba(26,26,46,.9));text-align:center}
+.contact-page .info-icon{font-size:2.4rem;color:var(--primary-color);margin-bottom:10px}
+.contact-page .contact-form{padding:30px;border-radius:10px;border:2px solid var(--primary-color);background:linear-gradient(135deg,rgba(212,175,55,.03),rgba(26,26,46,.6))}
+.contact-page .form-group{margin-bottom:18px}
+.contact-page input, .contact-page select, .contact-page textarea{width:100%;padding:10px 12px;border-radius:6px;border:2px solid rgba(212,175,55,.15);background:rgba(255,255,255,.03);color:var(--text-color)}
+.contact-page .submit-btn{width:100%;padding:12px 18px;border-radius:6px;border:none;background:linear-gradient(135deg,var(--primary-color),#b8960e);color:var(--dark-bg);font-weight:700}
+@media(max-width:768px){.contact-page .contact-container{grid-template-columns:1fr;gap:20px}}
